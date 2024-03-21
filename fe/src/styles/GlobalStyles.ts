@@ -51,6 +51,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: #fafafa;
     color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   button {
