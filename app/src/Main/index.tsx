@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
+
 import { Container, CategoriesContainer, MenuContainer, Footer, FooterContainer, CenteredContainer } from './styles';
 
 import { Header } from '../components/Header';
@@ -5,22 +8,33 @@ import { Categories } from '../components/Categories';
 import { Menu } from '../components/Menu';
 import { Button } from '../components/Button';
 import { TableModal } from '../components/TableModal';
-import { useState } from 'react';
 import { Cart } from '../components/Cart';
 import { CartItem } from '../types/CartItem';
 import { Product } from '../types/Product';
-import { ActivityIndicator } from 'react-native';
 import { Empty } from '../components/Icons/Empty';
 import { Text } from '../components/Text';
+import { Category } from '../types/Category';
 
-import { products as mockProducts } from '../mocks/products';
+import { api } from '../utils/api';
 
 export function Main() {
   const [isTableModalVisible, setIsTableModalVisible] = useState(false);
   const [selectedTable, setSelectedTable] = useState('');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [isLoading] = useState(false);
-  const [products] = useState<Product[]>(mockProducts);
+  const [isLoading, setIsLoading] = useState(true);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    Promise.all([
+      api.get('/categories'),
+      api.get('/products'),
+    ]).then(([categoriesResponse, ProductsResponse]) => {
+      setCategories(categoriesResponse.data);
+      setProducts(ProductsResponse.data);
+      setIsLoading(false);
+    });
+  }, []);
 
   function handleSaveTable(table: string) {
     setSelectedTable(table);
@@ -100,7 +114,9 @@ export function Main() {
         {!isLoading && (
           <>
             <CategoriesContainer>
-              <Categories />
+              <Categories
+                categories={categories}
+              />
             </CategoriesContainer>
 
             {products.length > 0 ? (
