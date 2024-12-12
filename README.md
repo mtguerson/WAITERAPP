@@ -1,21 +1,21 @@
 
 # WAITERAPP
 
-O WAITERAPP é uma solução inovadora desenvolvida especificamente para garçons e estabelecimentos de alimentação. Este aplicativo facilita a anotação e gerenciamento de pedidos em tempo real, otimizando o serviço de atendimento e melhorando a comunicação entre a equipe de garçons e a cozinha.
+WAITERAPP is an innovative solution developed specifically for waiters and food establishments. This app facilitates real-time order taking and management, optimizing service and improving communication between the waitstaff and the kitchen team.
 
 ![image](https://github.com/user-attachments/assets/40fc72cc-019e-43b8-ac9a-96400c9b9981)
 
-## Características
+## Features
 
-- **Anotação de Pedidos em Tempo Real**: Permite que os garçons anotem os pedidos diretamente no aplicativo móvel, agilizando o processo de atendimento.
-- **Gerenciamento de Pedidos**: Os pedidos aparecem em uma aplicação web acessível no computador, onde a equipe pode gerenciar o processo de preparação, incluindo opções para cancelar pedidos, iniciar produção, marcar como concluído, etc.
-- **Notificações Instantâneas**: A equipe de cozinha recebe notificações instantâneas sobre novos pedidos ou alterações, garantindo uma comunicação eficaz e rápida resposta às necessidades dos clientes.
-- **Histórico de Pedidos**: Mantém um registro de todos os pedidos, facilitando o acompanhamento e a análise de preferências dos clientes e eficiência do serviço.
+- **Real-Time Order Taking**: Allows waiters to take orders directly on the mobile app, speeding up the service process.
+- **Order Management**: Orders appear on a web application accessible on a computer, where the team can manage the preparation process, including options to cancel orders, start production, mark as completed, etc.
+- **Instant Notifications**: The kitchen team receives instant notifications about new orders or changes, ensuring effective communication and a quick response to customer needs.
+- **Order History**: Maintains a record of all orders, making it easier to track and analyze customer preferences and service efficiency.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- Front-end: React (para a aplicação web)
-- Mobile: React Native (para o aplicativo dos garçons)
-- Back-end: Express (para gerenciamento de pedidos e comunicação entre o app e a aplicação web)
-- Banco de Dados: MongoDB (para armazenamento de dados dos pedidos)
-- Comunicação em Tempo Real: WebSocket (para atualizações instantâneas entre o app móvel e a aplicação web)
+- Front-end: React (for the web application)
+- Mobile: React Native (for the waiters' app)
+- Back-end: Express (for managing orders and communication between the app and web application)
+- Database: MongoDB (for storing order data)
+- Real-Time Communication: WebSocket (for instant updates between the mobile app and the web application)
